@@ -3,6 +3,7 @@ using namespace std;
 
 void shellSort(int arr[], int size)
 {
+    int total_passes = 0;
     for (int gap = size / 2; gap > 0; gap /= 2)
     {
         for (int j = gap; j < size; j++)
@@ -13,10 +14,14 @@ void shellSort(int arr[], int size)
             for (i = j; (i >= gap) && (arr[i - gap]) > temp; i -= gap)
             {
                 arr[i] = arr[i - gap];
+                total_passes++;
             }
             arr[i] = temp;
+            total_passes++;
         }
+        total_passes++;
     }
+    cout << "Total Passes : " << total_passes << endl;
 }
 
 int main()
