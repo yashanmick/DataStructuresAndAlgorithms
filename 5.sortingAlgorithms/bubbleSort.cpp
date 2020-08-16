@@ -3,8 +3,10 @@ using namespace std;
 
 void bubbleSort(int a[])
 {
+    int rounds = 0;
     for (int i = 0; i < 5; i++)
     {
+        rounds++;
         for (int j = 0; j < (5 - i - 1); j++)
         {
             if (a[j] > a[j + 1])
@@ -15,6 +17,7 @@ void bubbleSort(int a[])
             }
         }
     }
+    cout << "No of rounds : " << rounds << endl;
 };
 
 int main()
